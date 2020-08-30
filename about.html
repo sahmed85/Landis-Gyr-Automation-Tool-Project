@@ -1,0 +1,115 @@
+<!-- ############################################################################################
+#File: about.html
+#Name: Shad Ahmed
+#Date Created: 2/18/2020
+#Last Modified: Ongoing 
+#Usage: Internal | localhost -> to be used externally
+#Overview: This file is a dev file to create a firmware/network upgrade plan for customers.  
+#Github/Git: sahmed85/ | *this is a private repo*
+#Project: UpgradePlanTool
+############################################################################################### -->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- These headers are for linking the Bootstrap objects into this webpackage -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>	Upgrade Plan Tool Home </title>
+	<style>
+		
+		h3 {
+			color: black ;
+		}
+
+		.logo {
+			font-size: 200px;
+		}
+
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class = "nav navbar-default" style = "background-color:#8cba51" >
+		<div class = "navbar-header"> 
+			<a class = "navbar-brand" href = "home.html"; style = "color: white"> L+G Upgrade Plan Tool </a>
+		</div>
+		<ul class = "nav navbar-nav">
+			<li> <a href= "home.html"> Home </a></li>
+			<li> <a href = "buildplan.php"> Build a Plan </a> </li>
+		</ul>
+		<ul class = "nav navbar-nav navbar-right">
+			<li class = "active"> <a href = "#"> <span class = "glyphicon glyphicon-exclamation-sign"></span> About </a> </li>
+			<li> <a href="help.html"> <span class = "glyphicon glyphicon-user"></span> Help </a> </li>
+		</ul>
+		</nav>
+	<div class="jumbotron text-center">
+		<h2> Firmware Upgrade Plan Tool: </h2>
+		<h4> Click the 'Build a Plan' page to get started! </h4>
+	</div>
+	
+	<!-- 	About tool Container -->
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> About This Tool </h2>
+				<h4> The purpose of this tool is to help you create your firmware upgrade plan for your customer using this automated tool. The tool runs on WAMP stack server that uses JavaScript and Python to take user input to make guidelines and tables for an Upgrade Plan.</h4>
+				<h4> The tool allows a database connection to Oracle and MSSQL to handle larger customer data and offers a quicker execution time. Using a database connection allows you to filter for certain Firmware, if you do not want all firmware types into account. All queries used to fill a report can be found later in this documentation. </h4>
+
+				<h4> The tool also allows Excel uploads (up to 1 GB) to handle reporting. For larger datasets, you can expect longer execution times due Read/Write and File IO times of Excel documents. For any errors in Oracle DB or MSSQL, excel uploads provides an alternative to creating reports.</h4>      
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-list-alt logo"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> GitHub Source Code </h2>
+				<h4> The source code for this project is hosted on GitHub. GitHub allows for collaboration, version control and hosting. </h4>
+				<h4> The GitHub source code allows you to clone and change anything you would like to this tool. The GitHub Repo includes all Python, HTML, PHP and Bash Scripts used. Please note that the Apache webserver config files are not included. </h4>
+				<h4> The GitHub source code can be found <a href="https://github.com/sahmed85/Upgrade-Plan-Tool.git"> here.</a></h4>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-duplicate logo"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> Release Documentation </h2>
+				<h4> The full documentation for this tool can be download here:</h4>
+				<button class = "btn btn-default"> <a href="/upgradeplantool/documentation/upgradeplantool_documentation.docx" download> Download Documentation </a></button>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-list logo"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+			<h4> Created By: Shad (Shadman) Ahmed <br>
+	  			Co-Op Spring 2020, Technical Implementation Management <br>
+	  			Landis+Gyr <br>
+	 	 		Alpharetta, GA <br>
+  			<h4> Collaboration With: Randy Akuffo <br>
+  	 			Technical Implementation Engineer <br>
+	  		    Landis+Gyr <br>
+	  			Alpharetta, GA <br>
+  			<h4>Contact information: <a href="mailto:Randy.Akuffo@landisgyr.com">Randy.Akuffo@landisgyr.com</a>.</h4>
+  		</div>
+		</div>
+	</div>
+</body>

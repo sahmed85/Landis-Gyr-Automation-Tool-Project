@@ -1,0 +1,186 @@
+<!-- ############################################################################################
+#File: report.html
+#Name: Shad Ahmed
+#Date Created: 3/9/2020
+#Last Modified: Ongoing 
+#Usage: Internal | localhost -> to be used externally
+#Overview: This file holds the html tags for outputting the report. Using AJAX it calls a php script which calls the 	 layeranalysis and appendix python scripts for tables.  
+#Github/Git: sahmed85/ | *this is a private repo*
+#Project: UpgradePlanTool
+############################################################################################### -->
+
+<!-- ############################################################################################
+#File: testpython.php
+#Name: Shad Ahmed
+#Date Created: 2/27/2020
+#Last Modified: Ongoing 
+#Usage: Internal | localhost -> to be used externally
+#Overview: This file is as test file to see if php can read an excel sheet.  
+#Github/Git: sahmed85/ | *this is a private repo*
+#Project: UpgradePlanTool
+############################################################################################### -->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- These headers are for linking the Bootstrap objects into this webpackage -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>	Upgrade Report </title>
+	<style>
+		
+		h2 {
+			padding-left: 5px;
+		}
+
+		h3 {
+			padding-left: 5px;
+		}
+
+		h4 {
+			padding-left: 5px;
+		}
+
+		.logo {
+			font-size: 200px;
+		}
+
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+
+		.classWithPad {
+			margin: 10px;
+			padding: 10px;
+		}
+
+		div.bodycolor {
+			background-color: #abeda8
+		}
+
+		input, textarea{
+			background-color: #ebe6e6;	
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 1px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		@keyframes spinner {
+			0% {
+				transform: translate3d(-50%, -50%, 0) rotate(0deg);
+			}
+			100% {
+				transform: translate3d(-50%, -50%, 0) rotate(360deg);
+			}
+		}
+
+		.spin::before {
+			animation: 1.5s linear infinite spinner;
+			animation-play-state: inherit;
+			border: solid 5px #cfd0d1;
+			border-bottom-color: #1c87c9;
+			border-radius: 50%;
+			content: "";
+			height: 70px;
+			width: 70px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			will-change: transform;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class = "nav navbar-default" style = "background-color:#8cba51" >
+		<div class = "navbar-header"> 
+			<a class = "navbar-brand" href = "home.html"; style = "color: white"> L+G Upgrade Plan Tool </a>
+		</div>
+		<ul class = "nav navbar-nav">
+			<li> <a href= "home.html"> Home </a></li>
+			<li class = "active"> <a href = "buildplan.html"> Build a Plan </a> </li>
+		</ul>
+		<ul class = "nav navbar-nav navbar-right">
+			<li> <a href = "about.html"> <span class = "glyphicon glyphicon-exclamation-sign"></span> About </a> </li>
+			<li> <a href="help.html"> <span class = "glyphicon glyphicon-user"></span> Help </a> </li>
+		</ul>
+	</nav>
+
+	<div class="jumbotron text-center">
+		<h2> Firmware Upgrade Plan Report: </h2>
+	</div>
+
+	<div class="container">
+		<h2> 1 Summary </h2>
+		<h4> This guide will outline the steps needed to the upgrade of Integrated Enhanced Focus AX meters. The goal firmware version is 13.09. The customer is currently using Command Center INSERT PHP MR1. </h4>
+		<h4> Landis+Gyr will facilitate the update of the Enhanced Integrated Focus AX meters. The customer will be responsible for upgrading the rest of the network devices. Landis+Gyr will provide an upgrade plan for the rest of the network if the customer would like. </h4>
+		<h4> This document is a recommendation. All update processes should follow L+G’s official RF Network Device Upgrade Guide (<a href="http://connection.am.bm.net/departments/Sales/Shared%20Documents/Technical%20Sales/Tools/Documentation/98-1290.pdf">98-1290</a>). </h4>
+		<h4>It will likely take several weeks to complete the update of firmware and DCW but the majority should be done in 2-3 weeks.</h4>  
+		<h3> 1.1 Reference Documents </h3>
+		<h4> 98-1290: Gridstream RF Network Device Upgrade Guide <br>
+			 98-2029: CC7.4 Maintenance Release Notes for MR1
+		</h4>
+		<h3 style="padding-left: 5px"> i. Current Collector Count </h3>
+		<div id= 'collectortable' style = "padding-left:5px">
+			<div class = "spin">
+			</div>
+		</div>
+
+		<h3 style="padding-left: 5px"> ii. Current Router Count </h3>
+		<div id="routertable" style="padding-left:5px">
+			<div class="spin">
+			</div>
+		</div> 
+
+		<h3 style = "padding-left: 5px"> iii. Current Endpoint Count </h3>
+		<div id="endpointtable" style="padding-left:5px">
+			<div class="spin">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery.ajax ({
+			type: "POST",
+			url: 'python_handler.php',
+			data: {functionname:'callCollector'},
+			success: function(data){
+				document.getElementById("collectortable").innerHTML = data;
+			}
+		});
+
+		jQuery.ajax ({
+			type: "POST",
+			url: 'python_handler.php',
+			data: {functionname:'callRouter'},
+			success: function(data){
+				document.getElementById("routertable").innerHTML = data;
+			}
+		});
+
+		jQuery.ajax ({
+			type: "POST",
+			url: 'python_handler.php',
+			data: {functionname:'callEndpoint'},
+			success: function(data){
+				document.getElementById("endpointtable").innerHTML = data;
+			}
+		})
+	</script>
+
+</body>
+</html>

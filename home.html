@@ -1,0 +1,104 @@
+<!-- ############################################################################################
+#File: home.html
+#Name: Shad Ahmed
+#Date Created: 2/18/2020
+#Last Modified: Ongoing 
+#Usage: Internal | localhost -> to be used externally
+#Overview: This file is a dev file to create a firmware/network upgrade plan for customers.  
+#Github/Git: sahmed85/ | *this is a private repo*
+#Project: UpgradePlanTool
+############################################################################################### -->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- These headers are for linking the Bootstrap objects into this webpackage -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>	Upgrade Plan Tool Home </title>
+	<style>
+		
+		h3 {
+			color: black ;
+		}
+
+		.logo {
+			font-size: 200px;
+		}
+
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class = "nav navbar-default" style = "background-color:#8cba51" >
+		<div class = "navbar-header"> 
+			<a class = "navbar-brand" href = "home.html"; style = "color: white"> L+G Upgrade Plan Tool </a>
+		</div>
+		<ul class = "nav navbar-nav">
+			<li class = "active"> <a href= "home.html"> Home </a></li>
+			<li> <a href = "buildplan.php"> Build a Plan </a> </li>
+		</ul>
+		<ul class = "nav navbar-nav navbar-right">
+			<li> <a href = "about.html"> <span class = "glyphicon glyphicon-exclamation-sign"></span> About </a> </li>
+			<li> <a href="help.html"> <span class = "glyphicon glyphicon-user"></span> Help </a> </li>
+		</ul>
+	</nav>
+	<div class="jumbotron text-center">
+		<h2> Firmware Upgrade Plan Tool: </h2>
+		<h4> Click the 'Build a Plan' page to get started! </h4>
+	</div>
+	
+	<!-- 	About tool Container -->
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> About this tool </h2>
+				<h4> The purpose of this tool is to help you create your firmware upgrade plan for your customer using this automated tool.</h4>      
+				<p> Check this page out to learn more about this tool, including links to the code repository! </p>
+				<button class="btn btn-default btn-lg"> <a href="about.html"> Learn More! </a> </button>
+			</div>
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-list-alt logo"></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Current client support: -->
+	<div class="container-fluid" style = "background-color: #abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> Current Support: </h2> 
+				<ul>
+					<li> <h4> Oracle Database </h4> </li>
+					<li> <h4> MS SQL Database </h4> </li>
+					<li> <h4> XLS Upload</h4> </li>
+				</ul>
+			</div>
+
+			<div class="col-sm-4">
+				<span class="glyphicon glyphicon-globe logo"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style = "background-color: #abeda8">
+	<div class="row">
+		<div class="col-sm-8">
+			<h2> Need Help: </h2>
+			<h4> Check the help page to get in contact for any issues. </h4>
+			<button class="btn btn-default btn-lg"> <a href="help.html"> Help! </a> </button>
+		</div>
+		<div class="col-sm-4">
+			<span class="glyphicon glyphicon-exclamation-sign logo"></span>
+		</div>
+	</div>
+</div>
+</body>
+

@@ -1,0 +1,110 @@
+<!-- ############################################################################################
+#File: help.html
+#Name: Shad Ahmed
+#Date Created: 2/18/2020
+#Last Modified: Ongoing 
+#Usage: Internal | localhost -> to be used externally
+#Overview: This file is a dev file to create a firmware/network upgrade plan for customers.  
+#Github/Git: sahmed85/ | *this is a private repo*
+#Project: UpgradePlanTool
+############################################################################################### -->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- These headers are for linking the Bootstrap objects into this webpackage -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>	Upgrade Plan Tool Home </title>
+	<style>
+		
+		h3 {
+			color: black ;
+		}
+
+		.logo {
+			font-size: 200px;
+		}
+
+		.col-sm-4 {
+			text-align: center;
+			margin: 25px 0;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class = "nav navbar-default" style = "background-color:#8cba51" >
+		<div class = "navbar-header"> 
+			<a class = "navbar-brand" href = "home.html"; style = "color: white"> L+G Upgrade Plan Tool </a>
+		</div>
+		<ul class = "nav navbar-nav">
+			<li> <a href= "home.html"> Home </a></li>
+			<li> <a href = "buildplan.php"> Build a Plan </a> </li>
+		</ul>
+		<ul class = "nav navbar-nav navbar-right">
+			<li> <a href = "about.html"> <span class = "glyphicon glyphicon-exclamation-sign"></span> About </a> </li>
+			<li class = "active"> <a href="help.html"> <span class = "glyphicon glyphicon-user"></span> Help </a> </li>
+		</ul>
+	</nav>
+	<div class="jumbotron text-center">
+		<h2> Firmware Upgrade Plan Tool: </h2>
+		<h4> Click the 'Build a Plan' page to get started! </h4>
+	</div>
+
+	<div class="container-fluid bg-grey" style="background-color:#abeda8">
+		<div class="row">
+			<div class="col-sm-8">
+				<h4><h1>Error Code Documentation</h1>
+					<p><strong>For all other unexpected behavior and errors that are not listed below, check the Apache error log and the PHP error log.</strong></p>
+					<h3>Database Connection Scripts Error Code and Possible Solutions</h3>
+					<ul>
+						<li>ERROR CODE 101: (Common Ones Below)
+							<ul>
+								<li><strong>DPI-1047: Cannot locate a 64-bit Oracle Client library: </strong>This error arises if the Oracle Drivers for windows are not downloaded and installed with the python library. More information on that is found is section 4 of this documentation. Another possible reason for this is windows <a href="https://stackoverflow.com/questions/17830276/run-windows-command-in-php">rights issue</a>. After starting WAMP, you may need to change the <strong>Log On </strong>rights to the wampapache64 service. To do this: Press the windows button &gt; type services and open it &gt; scroll to <strong>wampapache64</strong> &gt; right click and open <strong>Properties</strong> &gt; click the <strong>Log On </strong>tab &gt; change to <strong>this account and enter the AM\ username used to sign into this machine</strong>. If migrated to a server, this issue may or may not arise and further investigation may be needed.</li>
+								<li><strong>ORA-12545: Connect failed because target host or object does not exist: </strong>This could be a VPN issue. Ensure you are connected to the appropriate VPN to access the DB.</li>
+								<li><strong>All other errors under this code should return the exception </strong>that has occurred like connection errors, DB not found etc. These can be solved by rechecking the entered information or making sure you are connected to the appropriate VPN requirement.</li>
+							</ul>
+						</li>
+						<li>ERROR CODE 102:
+							<ul>
+								<li>This error code pertains python execution error. The error code should return an exception to the issue that occurred. Errors could occur due to mismatch of session ids expiring. In this case it is recommended to open a new window and restarting making the plan.</li>
+							</ul>
+						</li>
+						<li>&shy;Other Errors that may arise:
+							<ul>
+								<li>Other errors that may arise on the server side should return an exception that will show where the issue has raised.</li>
+							</ul>
+						</li>
+					</ul>
+					<h3>Excel Scripts Error Code and Possible Solutions</h3>
+					<ul>
+						<li>ERROR CODE 201:
+							<ul>
+								<li>This error drives from a failure in the excel upload. The ISSET check failure could arise if the one of the files uploaded is not an Excel file (xlsx). A POST SET check failure could arise if you attempted to Upload without uploading all three documents. Try reuploading with them.</li>
+							</ul>
+						</li>
+						<li>ERROR CODE 202:
+							<ul>
+								<li>This error code pertains python execution error. The error code should return an exception to the issue that occurred. Errors could occur due to mismatch of session ids expiring. In this case it is recommended to open a new window and restarting making the plan.</li>
+							</ul>
+						</li>
+					</ul></h4>      
+				</div>
+				<div class="col-sm-4">
+					<span class="glyphicon glyphicon-list-alt logo"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid bg-grey" style="background-color:#abeda8">
+			<div class="row">
+				<div class="col-sm-8">
+					<h2> Enjoy a meme while you are here:</h2>
+					<img src="/upgradeplantool/images/img5.png" style="padding-left: 5px; height: 500px; width: 500px" class="center">      
+				</div>
+			</div>
+		</div>
+	</body>
