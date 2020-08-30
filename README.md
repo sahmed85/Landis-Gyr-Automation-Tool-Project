@@ -1,7 +1,7 @@
 # Landis-Gyr-Automation-Tool-Project
 **Please note that this is the redacted version of this project. NDA requires to remove confidential and sensitve information. This code has been uploaded as a showcase of my work in my internship with Landis+Gyr.**
 
-**Please refer to the wiki or the documentation folder for the full documentation on this tool!**
+**Please refer to the documentation folder for the full in-depth documentation on this tool!**
 
 About this Tool
 The purpose of this tool is to help you create your firmware upgrade plan for your customer using this automated tool. The tool runs on WAMP stack server that uses JavaScript and Python to take user input to make guidelines and tables for an Upgrade Plan.
